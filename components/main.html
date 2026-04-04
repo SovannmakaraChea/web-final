@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas UI - Light & Dark</title>
+    <!-- Importamos Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter para un look similar -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Efecto de grano/ruido opcional */
+        .noise-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E");
+            pointer-events: none;
+            mix-blend-mode: overlay;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+    <div class="text-center">
+        <h1 class="text-4xl">Start with our course</h1>
+    </div>
+    <div class="min-h-screen flex items-center justify-center p-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-24 max-w-7xl w-full">
+
+            <!-- TARJETA OSCURA (Dark Card) -->
+            <div class="relative bg-blue-800 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer">
+                
+                <!-- Contenedor de Imagen -->
+                <div class="absolute inset-0 h-full w-full overflow-hidden">
+                    <!-- Imagen de fondo con ZOOM más dramático -->
+                    <img src="./cpp-programming-course-in-trichy.png" 
+                        alt="C++" 
+                        class="w-full h-[85%] object-cover grayscale contrast-150 object-center opacity-45 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    
+                    <div class="noise-overlay"></div>
+
+                    <!-- Degradados -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-blue-800/10 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-800 via-blue/90 to-transparent top-1/3"></div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
+                    <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
+                        Crafting a Timeless Brand Identity
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        We're a small team in Berlin doing design work for brands that want to stand out.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-gray-300">
+                        <span class="opacity-80">5 min read</span>
+                        
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                            </svg>
+                            <span class="text-white">320</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA OSCURA (Dark Card) -->
+            <div class="relative bg-red-500 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer">
+                
+                <!-- Contenedor de Imagen -->
+                <div class="absolute inset-0 h-full w-full overflow-hidden">
+                    <!-- Imagen de fondo con ZOOM más dramático -->
+                    <img src="./sta-je-html (1).jpg" 
+                        alt="Astronauta en la luna" 
+                        class="w-full h-[85%] object-cover grayscale contrast-150 object-center opacity-60 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    
+                    <div class="noise-overlay"></div>
+
+                    <!-- Degradados -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-orange-400/90 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-orange-500 via-yellow/90 to-transparent top-1/3"></div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
+                    <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
+                        Crafting a Timeless Brand Identity
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        We're a small team in Berlin doing design work for brands that want to stand out.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-gray-300">
+                        <span class="opacity-80">5 min read</span>
+                        
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                            </svg>
+                            <span class="text-white">320</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA OSCURA (Dark Card) -->
+            <div class="relative bg-yellow-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer">
+                
+                <!-- Contenedor de Imagen -->
+                <div class="absolute inset-0 h-full w-full overflow-hidden">
+                    <!-- Imagen de fondo con ZOOM más dramático -->
+                    <img src="./JavaScript-Coding-for-Beginners-Exam-Included-Course-Exam.png" 
+                        alt="Astronauta en la luna" 
+                        class="w-full h-[85%] object-cover grayscale contrast-125 object-center opacity-200 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    
+                    <div class="noise-overlay"></div>
+
+                    <!-- Degradados -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-yellow-300/90 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-yellow-400  via-yellow-400/90 to-transparent top-1/3"></div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
+                    <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
+                        Crafting a Timeless Brand Identity
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        We're a small team in Berlin doing design work for brands that want to stand out.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-gray-300">
+                        <span class="opacity-80">5 min read</span>
+                        
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                            </svg>
+                            <span class="text-white">320</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TARJETA OSCURA (Dark Card) -->
+            <div class="relative bg-yellow-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer">
+                
+                <!-- Contenedor de Imagen -->
+                <div class="absolute inset-0 h-full w-full overflow-hidden">
+                    <!-- Imagen de fondo con ZOOM más dramático -->
+                    <img src="./JavaScript-Coding-for-Beginners-Exam-Included-Course-Exam.png" 
+                        alt="Astronauta en la luna" 
+                        class="w-full h-[85%] object-cover grayscale contrast-125 object-center opacity-200 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    
+                    <div class="noise-overlay"></div>
+
+                    <!-- Degradados -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-yellow-300/90 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-yellow-400  via-yellow-400/90 to-transparent top-1/3"></div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
+                    <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
+                        Crafting a Timeless Brand Identity
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        We're a small team in Berlin doing design work for brands that want to stand out.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-gray-300">
+                        <span class="opacity-80">5 min read</span>
+                        
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                            </svg>
+                            <span class="text-white">320</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TARJETA OSCURA (Dark Card) -->
+            <div class="relative bg-yellow-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer">
+                
+                <!-- Contenedor de Imagen -->
+                <div class="absolute inset-0 h-full w-full overflow-hidden">
+                    <!-- Imagen de fondo con ZOOM más dramático -->
+                    <img src="./JavaScript-Coding-for-Beginners-Exam-Included-Course-Exam.png" 
+                        alt="Astronauta en la luna" 
+                        class="w-full h-[85%] object-cover grayscale contrast-125 object-center opacity-200 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    
+                    <div class="noise-overlay"></div>
+
+                    <!-- Degradados -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-yellow-300/90 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-yellow-400  via-yellow-400/90 to-transparent top-1/3"></div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
+                    <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
+                        Crafting a Timeless Brand Identity
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        We're a small team in Berlin doing design work for brands that want to stand out.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-gray-300">
+                        <span class="opacity-80">5 min read</span>
+                        
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                            </svg>
+                            <span class="text-white">320</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TARJETA OSCURA (Dark Card) -->
+            <div class="relative bg-yellow-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer">
+                
+                <!-- Contenedor de Imagen -->
+                <div class="absolute inset-0 h-full w-full overflow-hidden">
+                    <!-- Imagen de fondo con ZOOM más dramático -->
+                    <img src="./JavaScript-Coding-for-Beginners-Exam-Included-Course-Exam.png" 
+                        alt="Astronauta en la luna" 
+                        class="w-full h-[85%] object-cover grayscale contrast-125 object-center opacity-200 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    
+                    <div class="noise-overlay"></div>
+
+                    <!-- Degradados -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-yellow-300/90 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-yellow-400  via-yellow-400/90 to-transparent top-1/3"></div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
+                    <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
+                        Crafting a Timeless Brand Identity
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        We're a small team in Berlin doing design work for brands that want to stand out.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-gray-300">
+                        <span class="opacity-80">5 min read</span>
+                        
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                            </svg>
+                            <span class="text-white">320</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TARJETA OSCURA (Dark Card) -->
+            <div class="relative bg-yellow-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer">
+                
+                <!-- Contenedor de Imagen -->
+                <div class="absolute inset-0 h-full w-full overflow-hidden">
+                    <!-- Imagen de fondo con ZOOM más dramático -->
+                    <img src="./JavaScript-Coding-for-Beginners-Exam-Included-Course-Exam.png" 
+                        alt="Astronauta en la luna" 
+                        class="w-full h-[85%] object-cover grayscale contrast-125 object-center opacity-200 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    
+                    <div class="noise-overlay"></div>
+
+                    <!-- Degradados -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-yellow-300/90 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-yellow-400  via-yellow-400/90 to-transparent top-1/3"></div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
+                    <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
+                        Crafting a Timeless Brand Identity
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        We're a small team in Berlin doing design work for brands that want to stand out.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-gray-300">
+                        <span class="opacity-80">5 min read</span>
+                        
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                            </svg>
+                            <span class="text-white">320</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TARJETA OSCURA (Dark Card) -->
+            <div class="relative bg-yellow-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer">
+                
+                <!-- Contenedor de Imagen -->
+                <div class="absolute inset-0 h-full w-full overflow-hidden">
+                    <!-- Imagen de fondo con ZOOM más dramático -->
+                    <img src="./JavaScript-Coding-for-Beginners-Exam-Included-Course-Exam.png" 
+                        alt="Astronauta en la luna" 
+                        class="w-full h-[85%] object-cover grayscale contrast-125 object-center opacity-200 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    
+                    <div class="noise-overlay"></div>
+
+                    <!-- Degradados -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-yellow-300/90 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-yellow-400  via-yellow-400/90 to-transparent top-1/3"></div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
+                    <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
+                        Crafting a Timeless Brand Identity
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        We're a small team in Berlin doing design work for brands that want to stand out.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-gray-300">
+                        <span class="opacity-80">5 min read</span>
+                        
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                            </svg>
+                            <span class="text-white">320</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TARJETA OSCURA (Dark Card) -->
+            <div class="relative bg-yellow-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer">
+                
+                <!-- Contenedor de Imagen -->
+                <div class="absolute inset-0 h-full w-full overflow-hidden">
+                    <!-- Imagen de fondo con ZOOM más dramático -->
+                    <img src="./JavaScript-Coding-for-Beginners-Exam-Included-Course-Exam.png" 
+                        alt="Astronauta en la luna" 
+                        class="w-full h-[85%] object-cover grayscale contrast-125 object-center opacity-200 transition-transform duration-700 ease-in-out group-hover:scale-110">
+                    
+                    <div class="noise-overlay"></div>
+
+                    <!-- Degradados -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-yellow-300/90 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-yellow-400  via-yellow-400/90 to-transparent top-1/3"></div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
+                    <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
+                        Crafting a Timeless Brand Identity
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        We're a small team in Berlin doing design work for brands that want to stand out.
+                    </p>
+
+                    <!-- Footer -->
+                    <div class="flex justify-between items-center text-xs font-semibold text-gray-300">
+                        <span class="opacity-80">5 min read</span>
+                        
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                            </svg>
+                            <span class="text-white">320</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
