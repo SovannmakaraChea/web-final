@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth md:scroll-auto">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dark Mode</title>
   <link rel="stylesheet" href="../src/output.css">
-
+  <style>
+    #about {
+        animation: scrolling linear;
+        animation-timeline: view();
+        animation-range: entry -10% cover 50%;
+    }
+    
+    @keyframes scrolling {
+            from {
+                opacity: 0;
+                transform: translateX(-150px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+    }
+  </style>
   <script>
     // Apply saved theme BEFORE page loads
     if (localStorage.getItem('theme') === 'dark') {
@@ -13,8 +30,8 @@
     }
   </script>
 </head>
-<body class="min-h-screen font-sans text-black dark:text-white dark:bg-gray-900 transition-colors duration-300">
-  
+<body class=" font-sans text-black dark:text-white dark:bg-gray-900 transition-colors duration-300">
+    <!-- Nav bar section -->
     <header class="relative bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50 shadow-lg shadow-black/5 dark:bg-gray-900 transition-colors duration-300">
         <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
         <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +57,7 @@
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="#" class="text-gray-700 hover:text-blue-600 dark:text-white font-medium transition-colors duration-200 relative group">
-                        Services
+                        Course
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="#" class="text-gray-700 hover:text-blue-600 dark:text-white font-medium transition-colors duration-200 relative group">
@@ -94,7 +111,7 @@
     </header>
     
   <!-- Hero Section -->
-<section class=" py-40 px-5 bg-gradient-to-b  via-purple-300 dark:bg-gray-900 transition-colors duration-300">
+<div class=" py-40 px-6 bg-gradient-to-b  via-purple-500 dark:bg-gray-900 transition-colors duration-300">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div class="md:w-1/2 mb-10 md:mb-0">
             <h2 class="text-4xl text-black font-bold leading-tight mb-4 dark:text-white transition-colors duration-300">Welcome to Our Site</h2>
@@ -106,16 +123,17 @@
         </div>
     </div>
 
+
     <!-- main section -->
     <div class="space-y-10">
         <div class="text-center mt-50">
             <h1 class="text-6xl font-extrabold">Start with our course</h1>
         </div>
-        <div class="min-h-screen flex items-center justify-center p-6">
+        <div class=" flex items-center justify-center p-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-24 max-w-7xl w-full">
 
                 <!-- Row 1 -->
-                <div class="relative bg-gray-100 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 ">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 ">
                     
                     <!-- Image 1 -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -235,7 +253,7 @@
                 </div>
                 <!-- row 2 -->
                 <!-- image 1 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-colors hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -247,8 +265,8 @@
                         <div class="noise-overlay"></div>
 
                         <!-- Degradados -->
-                        <div class="absolute inset-0 bg-gradient-to-b from-yellow-800/10 via-transparent to-transparent"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-yellow-300 to-transparent top-1/3"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-blue-800/10 via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-800 to-transparent top-1/3"></div>
                     </div>
 
                     <!-- Contenido -->
@@ -256,13 +274,13 @@
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
                             Crafting a Timeless Brand Identity
                         </h2>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                        <p class="text-white leading-relaxed mb-8">
                             We're a small team in Berlin doing design work for brands that want to stand out.
                         </p>
 
                         <!-- Footer -->
-                        <div class="flex justify-between items-center text-xs font-semibold text-gray-600">
-                            <span class="opacity-80">5 min read</span>
+                        <div class="flex justify-between items-center text-[16px] font-semibold text-white">
+                            <span class="opacity-100">Learn Now</span>
                             
                             <div class="flex items-center gap-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -274,7 +292,7 @@
                     </div>
                 </div>
                 <!-- image 2 -->
-                <div class="relative bg-orange-500 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -286,8 +304,8 @@
                         <div class="noise-overlay"></div>
 
                         <!-- Degradados -->
-                        <div class="absolute inset-0 bg-gradient-to-b from-orange-400/10 via-transparent to-transparent"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-orange-400 to-transparent top-1/3"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-blue-800/10 via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-800 to-transparent top-1/3"></div>
                     </div>
 
                     <!-- Contenido -->
@@ -295,13 +313,13 @@
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
                             Crafting a Timeless Brand Identity
                         </h2>
-                        <p class="text-gray-100 text-sm leading-relaxed mb-8 dark:text-black">
+                        <p class="text-white leading-relaxed mb-8">
                             We're a small team in Berlin doing design work for brands that want to stand out.
                         </p>
 
                         <!-- Footer -->
-                        <div class="flex justify-between items-center text-xs font-semibold text-gray-100 dark:textbl">
-                            <span class="opacity-80">5 min read</span>
+                        <div class="flex justify-between items-center text-[16px] font-semibold text-white">
+                            <span class="opacity-100">Learn Now</span>
                             
                             <div class="flex items-center gap-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -313,7 +331,7 @@
                     </div>
                 </div>
                 <!-- image 3 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-black">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-colors hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -325,8 +343,8 @@
                         <div class="noise-overlay"></div>
 
                         <!-- Degradados -->
-                        <div class="absolute inset-0 bg-gradient-to-b from-blue-300/10 via-transparent to-transparent"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-blue-400 to-transparent top-1/3"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-blue-800/10 via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-800 to-transparent top-1/3"></div>
                     </div>
 
                     <!-- Contenido -->
@@ -334,13 +352,13 @@
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
                             Crafting a Timeless Brand Identity
                         </h2>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        <p class="text-white text-[16px] leading-relaxed mb-8">
                             We're a small team in Berlin doing design work for brands that want to stand out.
                         </p>
 
                         <!-- Footer -->
-                        <div class="flex justify-between items-center text-xs font-semibold text-gray-300">
-                            <span class="opacity-80">5 min read</span>
+                        <div class="flex justify-between items-center text-[16px] font-semibold text-white">
+                            <span class="opacity-100">Learn Now</span>
                             
                             <div class="flex items-center gap-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 fill-current" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -352,6 +370,318 @@
                     </div>
                 </div>
         </div>
+    </div>
+    <!-- About Section -->
+    <div class="mt-52">
+        <h1 class="text-center text-6xl font-extrabold">About us</h1>
+    </div>  
+        <div class="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto mt-5 gap-10 px-6" id="about">       
+            <!-- Image -->
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="./img/About-Us.png" class="w-3xl">
+                </div>
+
+                <!-- Text -->
+                <div class="md:w-1/2 transition-colors duration-300" >                
+                    <h2 class="my-4 font-bold text-3xl sm:text-4xl">
+                    About Our Online Academy
+                    </h2>
+
+                    <p class="text-black dark:text-white font-semibold text-[16px] transition-colors duration-300">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, commodi
+                    doloremque, fugiat illum magni minus nisi nulla numquam obcaecati placeat quia,
+                    repellat tempore voluptatum.
+                    </p>
+                </div>
+            </div>
+        <div class="flex flex-col md:flex-row items-center justify-center max-w-6xl m-auto gap-10 px-6" id="about">       
+                <!-- Text -->
+                <div class="md:w-1/2 transition-colors duration-300">                
+                    <h2 class="my-4 font-bold text-3xl sm:text-4xl">
+                    We hand out free Certificate
+                    </h2>
+
+                    <p class="text-black dark:text-white font-semibold text-[16px] transition-colors duration-300">
+                    After you completed our course, You also recived a Certificate for each class you completed. You can use put that Certificate in your resume for job application.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center ">
+                    <img src="./img/Certificate.png" class="skew-y-6 w-full rounded-lg cursor-pointer hover:scale-[1.01] duration-300">
+                </div>
+        </div>
+    
+    <section class="pb-12 mx-auto md:pb-20 max-w-7xl mt-32">
+    <div class="py-4 text-center md:py-8">
+        <h4 class="text-6xl font-extrabold tracking-wide text-center uppercase text-teal-600">Reviews</h4>
+        <p class="mt-2 tracking-tight text-black text:xl md:text-2xl dark:text-white transition-colors duration-300">We have some fans.</p>
+    </div>
+
+    <div class="gap-8 space-y-8 md:columns-2 lg:columns-3" id="reviews">
+
+        <div class="p-8 bg-white shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 dark:bg-gray-900 transition-colors duration-300">
+            <div class="flex gap-4 items-start">
+                <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/men/12.jpg" alt="user avatar" width="400" height="400" loading="lazy">
+                <div class="flex-1 flex justify-between items-start">
+                    <div>
+                        <h6 class="text-lg font-medium text-gray-700 dark:text-white transition-colors duration-300">Ravi Kumar</h6>
+                        <p class="text-sm text-gray-500">Web Designer</p>
+                    </div>
+                    <a href="https://twitter.com/ravikumar/status/1234567890"
+                        class="text-blue-500 hover:text-blue-600 ml-4">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="mt-8 dark:text-white transition-colors duration-300">The quality of these seat covers is outstanding. They fit perfectly and add a touch of
+                luxury to
+                my car's interior. Highly recommend!</p>
+        </div>
+
+        <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
+            <div class="flex gap-4 items-start">
+                <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/14.jpg" alt="user avatar" width="200" height="200" loading="lazy">
+                <div class="flex-1 flex justify-between items-start">
+                    <div>
+                        <h6 class="text-lg font-medium text-gray-700 dark:text-white transition-colors duration-300">Anjali Sharma</h6>
+                        <p class="text-sm text-gray-500">Marketing Professional</p>
+                    </div>
+                    <a href="https://www.instagram.com/p/1234567890" class="text-blue-500 hover:text-blue-600 ml-4">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="mt-8">I love the customizable designs! I was able to choose the perfect color to match my car's
+                interior. The material feels very durable.</p>
+        </div>
+
+        <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
+            <div class="flex gap-4 items-start">
+                <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/men/18.jpg" alt="user avatar" width="200" height="200" loading="lazy">
+                <div class="flex-1 flex justify-between items-start">
+                    <div>
+                        <h6 class="text-lg font-medium text-gray-700 dark:text-white transition-colors duration-300">Vijay Singh</h6>
+                        <p class="text-sm text-gray-500">Software Developer</p>
+                    </div>
+                    <a href="https://www.facebook.com/vijaysingh/posts/1234567890"
+                        class="text-blue-500 hover:text-blue-600 ml-4">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="mt-8 dark:text-white transition-colors duration-300">These seat covers are a game-changer for long drives. The added padding and ergonomic design
+                make
+                a huge difference in comfort.</p>
+        </div>
+
+        <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
+            <div class="flex gap-4 items-start">
+                <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/2.jpg" alt="user avatar" width="200" height="200" loading="lazy">
+                <div class="flex-1 flex justify-between items-start">
+                    <div>
+                        <h6 class="text-lg font-medium text-gray-700 dark:text-white transition-colors duration-300">Priya Patel</h6>
+                        <p class="text-sm text-gray-500">Mobile Developer</p>
+                    </div>
+                    <a href="https://twitter.com/priyapatel/status/1234567890"
+                        class="text-blue-500 hover:text-blue-600 ml-4">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="mt-8 dark:text-white transition-colors duration-300">The installation was super easy, and the instructions were clear. My car looks and feels
+                much more upscale now.</p>
+        </div>
+
+        <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
+            <div class="flex gap-4 items-start">
+                <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/men/62.jpg" alt="user avatar" width="200" height="200" loading="lazy">
+                <div class="flex-1 flex justify-between items-start">
+                    <div>
+                        <h6 class="text-lg font-medium text-gray-700 dark:text-white transition-colors duration-300">Arjun Mehta</h6>
+                        <p class="text-sm text-gray-500">Manager</p>
+                    </div>
+                    <a href="https://www.instagram.com/p/1234567890" class="text-blue-500 hover:text-blue-600 ml-4">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="mt-8 dark:text-white transition-colors duration-300">Great value for money. The seat covers have a premium feel and have significantly improved the look of my car's interior.</p>
+        </div>
+
+        <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
+            <div class="flex gap-4 items-start">
+                <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/19.jpg" alt="user avatar" width="400" height="400" loading="lazy">
+                <div class="flex-1 flex justify-between items-start">
+                    <div>
+                        <h6 class="text-lg font-medium text-gray-700 dark:text-white transition-colors duration-300">Sneha Rao</h6>
+                        <p class="text-sm text-gray-500">Product Designer</p>
+                    </div>
+                    <a href="https://www.facebook.com/sneharao/posts/1234567890"
+                        class="text-blue-500 hover:text-blue-600 ml-4">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="mt-8 dark:text-white transition-colors duration-300">Absolutely love these seat covers. They're stylish, comfortable, and were really easy to
+                install.
+                My car interior looks brand new!</p>
+        </div>
+    </div>    
+    <footer>
+  <div class="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-md">
+      <strong class="block text-center text-xl font-bold text-gray-900 sm:text-3xl dark:text-white transition-colors duration-300">
+        Want us to email you with the latest course? Join us now.
+      </strong>
+
+      <form class="mt-6">
+        <div class="relative max-w-lg">
+          <label class="sr-only" for="email"> Email </label>
+
+          <input class="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium text-black dark:text-black" id="email" type="email" placeholder="john@doe.com">
+
+          <button class="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700">
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
+      <div class="mx-auto max-w-sm lg:max-w-none">
+        <img src="./img/istad-logo1.png" class="w-90" alt="ISTAD Logo">
+
+        <div class="mt-6 flex justify-center gap-4 lg:justify-start">
+          <a class="text-gray-700 transition-colors dark:text-white duration-300 hover:text-gray-700/75" href="https://web.facebook.com/istad.co" target="_blank" rel="noreferrer">
+            <span class="sr-only"> Facebook </span>
+
+            <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+
+          <a class="text-gray-700 transition-colors hover:text-gray-700/75 dark:text-white duration-300" href="https://t.me/istadckh" target="_blank" rel="noreferrer">
+            <span class="sr-only"> Instagram </span>
+
+            <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+
+          <a class="text-gray-700 transition-colors dark:text-white duration-300 hover:text-gray-700/75" href="#" target="_blank" rel="noreferrer">
+            <span class="sr-only"> Twitter </span>
+
+            <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+            </svg>
+          </a>
+
+          <a class="text-gray-700 transition-colors dark:text-white duration-300 hover:text-gray-700/75" href="https://github.com/SovannmakaraChea/web-final" target="_blank" rel="noreferrer">
+            <span class="sr-only"> GitHub </span>
+
+            <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+
+          <a class="text-gray-700 transition-colors dark:text-white duration-300 hover:text-gray-700/75" href="#" target="_blank" rel="noreferrer">
+            <span class="sr-only"> Dribbble </span>
+
+            <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
+        <div>
+          <strong class="font-medium text-gray-900 dark:text-gray-500 transition-colors duration-300"> Services </strong>
+
+          <ul class="mt-6 space-y-1">
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#">
+                Marketing
+              </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#">
+                Graphic Design
+              </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#">
+                App Development
+              </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#">
+                Web Development
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <strong class="font-medium text-gray-900 dark:text-gray-500 transition-colors duration-300"> About </strong>
+
+          <ul class="mt-6 space-y-1">
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#"> About </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#"> Careers </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#"> History </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#"> Our Team </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <strong class="font-medium text-gray-900 dark:text-gray-500 transition-colors duration-300"> Support </strong>
+
+          <ul class="mt-6 space-y-1">
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#"> FAQs </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#"> Contact </a>
+            </li>
+
+            <li>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#">
+                Live Chat
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 border-t border-gray-100 pt-8">
+      <p class="text-center text-xs/relaxed text-gray-500">
+        © Company 2022. All rights reserved.
+
+        <br>
+
+        Created with
+        <a href="#" class="text-gray-700 underline transition hover:text-gray-700/75">Laravel</a>
+        and
+        <a href="#" class="text-gray-700 underline transition hover:text-gray-700/75">Laravel Livewire</a>.
+      </p>
+    </div>
+  </div>
+</footer>        
   <script>
     function toggleDarkMode() {
       const html = document.documentElement;
