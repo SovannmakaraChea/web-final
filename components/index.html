@@ -42,7 +42,7 @@
         <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3 group -mr-20">
+                <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 cursor-pointer">
                         <span class="text-white font-bold text-lg ">L</span>
                     </div>
@@ -52,7 +52,7 @@
                 </div>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-8 ml-auto">
                     <a href="#" class="text-gray-700 hover:text-blue-600 dark:text-white font-medium transition-colors duration-200 relative group">
                         Home
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
@@ -62,20 +62,38 @@
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="#about" class="text-gray-700 hover:text-blue-600 dark:text-white font-medium transition-colors duration-200 relative group">
-                        About Us
+                        About
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="#Contact" class="text-gray-700 hover:text-blue-600 dark:text-white font-medium transition-colors duration-200 relative group">
                         Contact
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    
-                </div>
-                <div class="m-0">
-                    <a href="#" class="text-gray-700 hover:text-blue-600 dark:text-white font-medium transition-colors duration-200 relative group">
+                    <button onclick="toggleDarkMode()"
+                        class="hidden md:flex h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer relative group">
+
+                        <!-- Moon -->
+                        <svg class="fill-violet-700 block dark:hidden" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                        </svg>
+
+                        <!-- Sun -->
+                        <svg class="fill-yellow-500 hidden dark:block" viewBox="0 0 20 20">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+                        </svg>
+                    </button>
+                    <a href="#" class="bg-white/15 text-black font-bold py-3 px-5  rounded-lg hover:bg-indigo-700 hover:text-white hover:shadow-2xl hover:scale-90 transition duration-300 cursor-pointer dark:text-white relative group">
                         Login   
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                     </a>
+                    <a href="#" class="bg-white/15 text-black font-bold py-3 px-5 rounded-lg hover:bg-indigo-700 hover:text-white hover:shadow-2xl hover:scale-90 transition duration-300 cursor-pointer dark:text-white relative group">
+                        Resgister 
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    
+                </div>
+                <div class="hidden md:flex">
+                    
                 </div>
                 <!-- CTA Button & Mobile Menu -->
                 
@@ -98,10 +116,23 @@
                     <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Course</a>
                     <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">About Us</a>
                     <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Contact</a>
-                     <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg mt-4">
+                     <button onclick="toggleDarkMode()"
+                        class="sm:block flex mr-12 h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer  ">
+
+                        <!-- Moon -->
+                        <svg class="fill-violet-700 block dark:hidden" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                        </svg>
+
+                        <!-- Sun -->
+                        <svg class="fill-yellow-500 hidden dark:block" viewBox="0 0 20 20">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+                        </svg>
+                    </button>
+                     <button class="w-full bg-white/15 text-black font-bold py-3 px-5  rounded-lg hover:bg-indigo-700 hover:text-white hover:shadow-2xl hover:scale-90 cursor-pointer transition-all duration-300 shadow-lg mt-4">
                         Login
                     </button>
-                    <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg mt-4">
+                    <button class="w-full bg-white/15 text-black font-bold py-3 px-5  rounded-lg hover:bg-indigo-700 hover:text-white hover:shadow-2xl hover:scale-90 cursor-pointer transition-all duration-300 shadow-lg mt-4">
                         Resgister
                     </button>
                     <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg mt-4">
@@ -111,21 +142,7 @@
                   </div>
             </div>
             <!-- Toggle Button -->
-            <div class="flex justify-end absolute right-10 top-2">
-              <button onclick="toggleDarkMode()"
-                class="sm:block flex mr-12 h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer  ">
-
-                <!-- Moon -->
-                <svg class="fill-violet-700 block dark:hidden" viewBox="0 0 20 20">
-                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
-                </svg>
-
-                <!-- Sun -->
-                <svg class="fill-yellow-500 hidden dark:block" viewBox="0 0 20 20">
-                  <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
-                </svg>
-              </button>
-            </div> 
+             
         </nav>  
     </header>
     
@@ -149,10 +166,10 @@
             <h1 class="text-6xl font-extrabold">Start with our course</h1>
         </div>
         <div class=" flex items-center justify-center p-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-24 max-w-7xl w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 max-w-7xl w-full">
 
                 <!-- Row 1 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[380px]">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
                     
                     <!-- Image 1 -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -168,16 +185,16 @@
                     </div>
 
                     <!-- Contenido -->
-                    <div class="relative z-10 flex flex-col justify-end h-full p-6">
+                    <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md">
                             Crafting a Timeless Brand Identity
                         </h2>
-                        <p class="text-white leading-relaxed mb-8 ">
+                        <p class="text-white leading-relaxed ">
                             We're a small team in Berlin doing design work for brands that want to stand out.
                         </p>
 
                         <!-- Footer -->
-                        <div class="flex justify-between items-center text-[16px] font-semibold text-white">
+                        <div class="flex justify-between items-center text-[16px] font-semibold text-white pt-6">
                             <span class="opacity-100 cursor-pointer">
                             <a class="border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-purple-600 transition" href="https://www.w3schools.com/cpp/default.asp" target="_blank">Learn now</a></span>
                     
@@ -193,7 +210,7 @@
 
 
                 <!-- image 2 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[380px]">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -214,12 +231,11 @@
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
                             Crafting a Timeless Brand Identity
                         </h2>
-                        <p class="text-white leading-relaxed mb-8">
+                        <p class="text-white leading-relaxed">
                             We're a small team in Berlin doing design work for brands that want to stand out.
                         </p>
-
                         <!-- Footer -->
-                        <div class="flex justify-between items-center text-[16px] font-semibold text-white">
+                        <div class="flex justify-between items-center text-[16px] font-semibold text-white p-0 pt-6">
                             <a class="border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-purple-600 transition" href="https://www.w3schools.com/java/default.asp" target="_blank">Learn now</a></span>
                             
                             <div class="flex items-center gap-1">
@@ -233,7 +249,7 @@
                 </div>
 
                 <!-- image 3 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -254,12 +270,12 @@
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
                             Crafting a Timeless Brand Identity
                         </h2>
-                        <p class="text-white leading-relaxed mb-8">
+                        <p class="text-white leading-relaxed">
                             We're a small team in Berlin doing design work for brands that want to stand out.
                         </p>
 
                         <!-- Footer -->
-                        <div class="flex justify-between items-center text-[16px] font-semibold text-white">
+                        <div class="flex justify-between items-center text-[16px] font-semibold text-white pt-6">
                             <a class="border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-purple-600 transition" href="https://www.w3schools.com/python/default.asp" target="_blank">Learn now</a></span>
                             
                             <div class="flex items-center gap-1">
@@ -273,7 +289,7 @@
                 </div>
                 <!-- row 2 -->
                 <!-- image 1 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-colors hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-colors hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -294,12 +310,12 @@
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
                             Crafting a Timeless Brand Identity
                         </h2>
-                        <p class="text-white leading-relaxed mb-8">
+                        <p class="text-white leading-relaxed">
                             We're a small team in Berlin doing design work for brands that want to stand out.
                         </p>
 
                         <!-- Footer -->
-                        <div class="flex justify-between items-center text-[16px] font-semibold">
+                        <div class="flex justify-between items-center text-[16px] font-semibold text-white pt-6">
                             <a class="border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-purple-600 transition" href="https://www.w3schools.com/js/default.asp" target="_blank">Learn now</a></span>
                             
                             <div class="flex items-center gap-1">
@@ -312,7 +328,7 @@
                     </div>
                 </div>
                 <!-- image 2 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -333,12 +349,12 @@
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
                             Crafting a Timeless Brand Identity
                         </h2>
-                        <p class="text-white leading-relaxed mb-8">
+                        <p class="text-white leading-relaxed">
                             We're a small team in Berlin doing design work for brands that want to stand out.
                         </p>
 
                         <!-- Footer -->
-                        <div class="flex justify-between items-center text-[16px] font-semibold text-white">
+                        <div class="flex justify-between items-center text-[16px] font-semibold text-white pt-6">
                             <a class="border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-purple-600 transition" href="https://www.w3schools.com/html/default.asp" target="_blank">Learn now</a></span>
                             
                             <div class="flex items-center gap-1">
@@ -351,7 +367,7 @@
                     </div>
                 </div>
                 <!-- image 3 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-colors hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-colors hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -372,12 +388,12 @@
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
                             Crafting a Timeless Brand Identity
                         </h2>
-                        <p class="text-white text-[16px] leading-relaxed mb-8">
+                        <p class="text-white text-[16px] leading-relaxed">
                             We're a small team in Berlin doing design work for brands that want to stand out.
                         </p>
 
                         <!-- Footer -->
-                        <div class="flex justify-between items-center text-[16px] font-semibold text-white">
+                        <div class="flex justify-between items-center text-[16px] font-semibold text-white pt-6">
                             <a class="border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-purple-600 transition" href="https://www.w3schools.com/css/default.asp" target="_blank">Learn now</a></span>
                             
                             <div class="flex items-center gap-1">
