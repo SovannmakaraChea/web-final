@@ -6,7 +6,7 @@
   <title>Dark Mode</title>
   <link rel="stylesheet" href="../src/output.css">
   <style>
-    #about {
+    #about, #reviews {
         animation: scrolling linear;
         animation-timeline: view();
         animation-range: entry 0% cover 30%;
@@ -14,7 +14,7 @@
     html {
         scroll-behavior: smooth;
     }
-    #main, #about {
+    #main, #about, #reviews {
         scroll-margin-top: 100px;
     }
     @keyframes scrolling {
@@ -109,6 +109,7 @@
                         <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Course</a>
                         <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">About Us</a>
                         <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Contact</a>
+                        <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Reviews</a>
                         <button onclick="toggleDarkMode()"
                             class="sm:block flex h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer">
 
@@ -139,8 +140,8 @@
 <div class=" py-40 px-6 bg-gradient-to-b  via-purple-500 dark:bg-gray-900 transition-colors duration-300">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div class="md:w-1/2 mb-10 md:mb-0">
-            <h2 class="text-4xl text-black font-bold leading-tight mb-4 dark:text-white transition-colors duration-300">Welcome to Our Site</h2>
-            <p class="text-xl text-black mb-4 dark:text-white transition-colors duration-300">We offer a range of services to help you achieve your goals.</p>
+            <h2 class="text-4xl text-black font-bold leading-tight mb-4 dark:text-white transition-colors duration-300">Welcome to ISTAD Online Academy</h2>
+            <p class="text-xl text-black mb-4 dark:text-white transition-colors duration-300">Unlock your potential with ISTAD Online Academy online courses. <br> Whether you’re looking to master a new skill or pivot your career,<br> we provide the flexible tools and expert mentorship you need to succeed.</p>
             <a href="#main"><button class="bg-white/15 text-black font-bold py-3 px-5 rounded-lg hover:bg-indigo-700 hover:text-white hover:shadow-2xl hover:scale-90 transition duration-300 cursor-pointer dark:text-white">Get Started</button></a>
         </div>
         <div class="md:w-1/2">
@@ -175,10 +176,10 @@
                     <!-- Contenido -->
                     <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md">
-                            Crafting a Timeless Brand Identity
+                            C++
                         </h2>
                         <p class="text-white leading-relaxed ">
-                            We're a small team in Berlin doing design work for brands that want to stand out.
+                            Master the fundamentals of C++ programming, from core syntax to advanced data structures.
                         </p>
 
                         <!-- Footer -->
@@ -217,10 +218,10 @@
                     <!-- Contenido -->
                     <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
-                            Crafting a Timeless Brand Identity
+                            Java
                         </h2>
                         <p class="text-white leading-relaxed">
-                            We're a small team in Berlin doing design work for brands that want to stand out.
+                            Build scalable, cross-platform applications with our comprehensive Java programming course.
                         </p>
                         <!-- Footer -->
                         <div class="flex justify-between items-center text-[16px] font-semibold text-white p-0 pt-6">
@@ -256,10 +257,10 @@
                     <!-- Contenido -->
                     <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
-                            Crafting a Timeless Brand Identity
+                            Python
                         </h2>
                         <p class="text-white leading-relaxed">
-                            We're a small team in Berlin doing design work for brands that want to stand out.
+                            Master Python fundamentals through hands-on projects, from basic scripting to advanced data analysis and automation.
                         </p>
 
                         <!-- Footer -->
@@ -296,10 +297,10 @@
                     <!-- Contenido -->
                     <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
-                            Crafting a Timeless Brand Identity
+                            Javacript
                         </h2>
                         <p class="text-white leading-relaxed">
-                            We're a small team in Berlin doing design work for brands that want to stand out.
+                            Bring your websites to life with dynamic interactivity, complex logic, and powerful client-side programming techniques.
                         </p>
 
                         <!-- Footer -->
@@ -335,10 +336,10 @@
                     <!-- Contenido -->
                     <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
-                            Crafting a Timeless Brand Identity
+                            HTML
                         </h2>
                         <p class="text-white leading-relaxed">
-                            We're a small team in Berlin doing design work for brands that want to stand out.
+                            Build the foundation of the web by mastering semantic structure, accessible content, and modern layouts.
                         </p>
 
                         <!-- Footer -->
@@ -374,10 +375,10 @@
                     <!-- Contenido -->
                     <div class="relative z-10 flex flex-col justify-end h-full p-8 pt-72">
                         <h2 class="text-2xl font-bold text-white leading-tight mb-3 drop-shadow-md group-hover:text-gray-100 transition-colors">
-                            Crafting a Timeless Brand Identity
+                            CSS
                         </h2>
                         <p class="text-white text-[16px] leading-relaxed">
-                            We're a small team in Berlin doing design work for brands that want to stand out.
+                            Transform basic layouts into stunning, responsive designs using advanced styling, animations, and flexible.
                         </p>
 
                         <!-- Footer -->
@@ -408,13 +409,11 @@
                 <!-- Text -->
                 <div class="md:w-1/2 transition-colors duration-300" >                
                     <h2 class="my-4 font-bold text-3xl sm:text-4xl">
-                    About Our Online Academy
+                    Our Online Academy
                     </h2>
 
                     <p class="text-black dark:text-white font-semibold text-[16px] transition-colors duration-300">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, commodi
-                    doloremque, fugiat illum magni minus nisi nulla numquam obcaecati placeat quia,
-                    repellat tempore voluptatum.
+                    provides a comprehensive, expert-led platform designed to bridge the gap between classroom theory and real-world application. We offer flexible, project-based curriculum that empowers students to master the high-demand technical skills and industry-standard tools necessary to excel in the evolving digital landscape.
                     </p>
                 </div>
             </div>
@@ -456,11 +455,10 @@
                     </a>
                 </div>
             </div>
-            <p class="mt-8 dark:text-white transition-colors duration-300">The quality of these seat covers is outstanding. They fit perfectly and add a touch of
-                luxury to
-                my car's interior. Highly recommend!</p>
+            <p class="mt-8 dark:text-white transition-colors duration-300">The curriculum quality is outstanding. Projects fit perfectly into my portfolio and add a professional edge to my design skills. Highly recommend for any creative!</p>
         </div>
 
+        <!-- reviews section -->
         <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
             <div class="flex gap-4 items-start">
                 <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/14.jpg" alt="user avatar" width="200" height="200" loading="lazy">
@@ -474,8 +472,7 @@
                     </a>
                 </div>
             </div>
-            <p class="mt-8">I love the customizable designs! I was able to choose the perfect color to match my car's
-                interior. The material feels very durable.</p>
+            <p class="mt-8">I love the flexible learning paths! I chose the perfect modules to match my brand’s digital needs. The content feels incredibly relevant today.</p>
         </div>
 
         <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
@@ -492,9 +489,7 @@
                     </a>
                 </div>
             </div>
-            <p class="mt-8 dark:text-white transition-colors duration-300">These seat covers are a game-changer for long drives. The added padding and ergonomic design
-                make
-                a huge difference in comfort.</p>
+            <p class="mt-8 dark:text-white transition-colors duration-300">These courses are a game-changer. The deep-dive modules and hands-on coding exercises make a massive difference in understanding complex system architecture and logic.</p>
         </div>
 
         <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
@@ -511,8 +506,7 @@
                     </a>
                 </div>
             </div>
-            <p class="mt-8 dark:text-white transition-colors duration-300">The installation was super easy, and the instructions were clear. My car looks and feels
-                much more upscale now.</p>
+            <p class="mt-8 dark:text-white transition-colors duration-300">The onboarding was super easy and instructions were clear. My app development skills feel much more advanced after completing the specialized mobile track.</p>
         </div>
 
         <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
@@ -528,7 +522,7 @@
                     </a>
                 </div>
             </div>
-            <p class="mt-8 dark:text-white transition-colors duration-300">Great value for money. The seat covers have a premium feel and have significantly improved the look of my car's interior.</p>
+            <p class="mt-8 dark:text-white transition-colors duration-300">Great value for money. The lessons have a premium feel and have significantly improved my team’s technical workflow and understanding of development cycles.</p>
         </div>
 
         <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
@@ -545,12 +539,10 @@
                     </a>
                 </div>
             </div>
-            <p class="mt-8 dark:text-white transition-colors duration-300">Absolutely love these seat covers. They're stylish, comfortable, and were really easy to
-                install.
-                My car interior looks brand new!</p>
+            <p class="mt-8 dark:text-white transition-colors duration-300">Absolutely love these tech courses. They are comprehensive, easy to follow, and integrated perfectly into my busy schedule. My portfolio looks brand new!</p>
         </div>
     </div>    
-<footer id="Contact">
+<footer id="Contact" class="mt-40">
   <div class="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-md">
       <strong class="block text-center text-xl font-bold text-gray-900 sm:text-3xl dark:text-white transition-colors duration-300">
@@ -607,25 +599,25 @@
 
           <ul class="mt-6 space-y-1">
             <li>
-              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#">
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="https://www.w3schools.com/cpp/default.asp">
                 C++
               </a>
             </li>
 
             <li>
-              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#">
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="https://www.w3schools.com/java/default.asp">
                 Java
               </a>
             </li>
 
             <li>
-              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#">
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="https://www.w3schools.com/javascript/default.asp">
                 Javacript
               </a>
             </li>
 
             <li>
-              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#">
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="https://www.w3schools.com/html/default.asp">
                 HTML
               </a>
             </li>
@@ -637,7 +629,7 @@
 
           <ul class="mt-6 space-y-1">
             <li>
-              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#"> About </a>
+              <a class="text-gray-700 dark:text-gray-300 transition-colors duration-300 hover:text-gray-700/75" href="#about"> About </a>
             </li>
 
             <li>
