@@ -5,18 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dark Mode</title>
   <link rel="stylesheet" href="../src/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
   <style>
-    #about, #reviews {
+    html {
+        scroll-behavior: smooth;
+    }
+    #right {
         animation: scrolling linear;
         animation-timeline: view();
         animation-range: entry 0% cover 30%;
     }
-    html {
-        scroll-behavior: smooth;
+    #reviews, #about, #left {
+        animation: scrolling2 linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
     }
-    #main, #about, #reviews {
+    #course, #middle {
+        animation: scrolling3 linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+    }
+    #main, #about, #Contact {
         scroll-margin-top: 100px;
     }
+    
     @keyframes scrolling {
             from {
                 opacity: 0;
@@ -27,6 +41,26 @@
                 transform: translateX(0px);
             }
     }
+    @keyframes scrolling2 {
+            from {
+                opacity: 0;
+                transform: translateX(150px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+    }
+    @keyframes scrolling3 {
+        from {
+            opacity: 0;
+            scale: 0.5;
+        }
+        to {
+            opacity: 1;
+            scale: 1;
+        }
+    }
   </style>
   <script>
     // Apply saved theme BEFORE page loads
@@ -35,7 +69,7 @@
     }
   </script>
 </head>
-<body class=" font-sans text-black dark:text-white dark:bg-gray-900 transition-colors duration-300">
+<body class=" text-black dark:text-white dark:bg-gray-900 transition-colors duration-300">
     <!-- Nav bar section -->
     <header class="relative bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50 shadow-lg shadow-black/5 dark:bg-gray-900 transition-colors duration-300">
         <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
@@ -61,10 +95,15 @@
                             About
                             <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                         </a>
+                        <a href="#reviews" class="text-gray-700 hover:text-blue-600 dark:text-white font-medium transition-colors duration-200 relative group">
+                            Reviews
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
                         <a href="#Contact" class="text-gray-700 hover:text-blue-600 dark:text-white font-medium transition-colors duration-200 relative group">
                             Contact
                             <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
                         </a>
+                        
                     </div>
                     <div class="hidden md:flex items-center space-x-16 ml-auto">
                         <button onclick="toggleDarkMode()"
@@ -106,10 +145,10 @@
                 <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-gray-200/50 shadow-lg animate-slide-down dark:bg-gray-900 transition-colors duration-300">
                     <div class="px-4 py-6 space-y-2">
                         <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Home</a>
-                        <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Course</a>
-                        <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">About Us</a>
-                        <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Contact</a>
-                        <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Reviews</a>
+                        <a href="#course" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Course</a>
+                        <a href="#about" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">About Us</a>
+                        <a href="#Contact" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Contact</a>
+                        <a href="#reviews" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Reviews</a>
                         <button onclick="toggleDarkMode()"
                             class="sm:block flex h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer">
 
@@ -140,8 +179,8 @@
 <div class=" py-40 px-6 bg-gradient-to-b  via-purple-500 dark:bg-gray-900 transition-colors duration-300">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div class="md:w-1/2 mb-10 md:mb-0">
-            <h2 class="text-4xl text-black font-bold leading-tight mb-4 dark:text-white transition-colors duration-300">Welcome to ISTAD Online Academy</h2>
-            <p class="text-xl text-black mb-4 dark:text-white transition-colors duration-300">Unlock your potential with ISTAD Online Academy online courses. <br> Whether you’re looking to master a new skill or pivot your career,<br> we provide the flexible tools and expert mentorship you need to succeed.</p>
+            <h2 class="text-4xl text-black font-extrabold font-stretch-50% leading-tight mb-4 dark:text-white transition-colors duration-300">Welcome to ISTAD Online Academy</h2>
+            <p class="text-xl text-black font-Quicksand mb-4 dark:text-white transition-colors duration-300">Unlock your potential with ISTAD Online Academy online courses. <br> Whether you’re looking to master a new skill or pivot your career,<br> we provide the flexible tools and expert mentorship you need to succeed.</p>
             <a href="#main"><button class="bg-white/15 text-black font-bold py-3 px-5 rounded-lg hover:bg-indigo-700 hover:text-white hover:shadow-2xl hover:scale-90 transition duration-300 cursor-pointer dark:text-white">Get Started</button></a>
         </div>
         <div class="md:w-1/2">
@@ -151,14 +190,14 @@
 
     <!-- main section -->
     <div id="main" class="space-y-10">
-        <div class="text-center mt-50">
-            <h1 class="text-6xl font-extrabold">Start with our course</h1>
+        <div class="text-center mt-50" id="course">
+            <h1 class="text-6xl font-extrabold tracking-wide text-center uppercase">Start with our course</h1>
         </div>
         <div class=" flex items-center justify-center p-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 max-w-7xl w-full">
 
                 <!-- Row 1 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]" id="right">
                     
                     <!-- Image 1 -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -199,7 +238,7 @@
 
 
                 <!-- image 2 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]" id="middle">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -238,7 +277,7 @@
                 </div>
 
                 <!-- image 3 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]" id="left">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -278,7 +317,7 @@
                 </div>
                 <!-- row 2 -->
                 <!-- image 1 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-colors hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-colors hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]" id="right">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -317,7 +356,7 @@
                     </div>
                 </div>
                 <!-- image 2 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-color hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]" id="middle">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -356,7 +395,7 @@
                     </div>
                 </div>
                 <!-- image 3 -->
-                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-colors hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]">
+                <div class="relative bg-gray-300 rounded-[2rem] overflow-hidden shadow-2xl transition-transform-colors hover:scale-[1.01] duration-300 w-full max-w-sm mx-auto group cursor-pointer dark:bg-gray-900 h-[460px]" id="left">
                     
                     <!-- Contenedor de Imagen -->
                     <div class="absolute inset-0 h-full w-full overflow-hidden">
@@ -398,9 +437,9 @@
     </div>
     <!-- About Section -->
     <div class="mt-52" id="about">
-        <h1 class="text-center text-6xl font-extrabold">About us</h1>
+        <h1 class="text-6xl font-extrabold tracking-wide text-center uppercase">About us</h1>
     </div>  
-        <div class="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto mt-5 gap-10 px-6" id="about">       
+        <div class="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto mt-5 gap-10 px-6" id="right">       
             <!-- Image -->
                 <div class="md:w-1/2 flex justify-center">
                     <img src="./img/About-Us.png" class="w-3xl">
@@ -417,7 +456,7 @@
                     </p>
                 </div>
             </div>
-        <div class="flex flex-col md:flex-row items-center justify-center max-w-6xl m-auto gap-10 px-6" id="about">       
+        <div class="flex flex-col md:flex-row items-center justify-center max-w-6xl m-auto gap-10 px-6" id="left">       
                 <!-- Text -->
                 <div class="md:w-1/2 transition-colors duration-300">                
                     <h2 class="my-4 font-bold text-3xl sm:text-4xl">
@@ -433,14 +472,13 @@
                 </div>
         </div>
     
-    <section class="pb-12 mx-auto md:pb-20 max-w-7xl mt-32">
+    <section class="pb-12 mx-auto md:pb-20 max-w-7xl mt-32" id="reviews">
     <div class="py-4 text-center md:py-8">
         <h4 class="text-6xl font-extrabold tracking-wide text-center uppercase text-teal-600">Reviews</h4>
         <p class="mt-2 tracking-tight text-black text:xl md:text-2xl dark:text-white transition-colors duration-300">We have some fans.</p>
     </div>
 
-    <div class="gap-8 space-y-8 md:columns-2 lg:columns-3" id="reviews">
-
+    <div class="gap-8 space-y-8 md:columns-2 lg:columns-3" id="right">
         <div class="p-8 bg-white shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 dark:bg-gray-900 transition-colors duration-300">
             <div class="flex gap-4 items-start">
                 <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/men/12.jpg" alt="user avatar" width="400" height="400" loading="lazy">
@@ -458,7 +496,6 @@
             <p class="mt-8 dark:text-white transition-colors duration-300">The curriculum quality is outstanding. Projects fit perfectly into my portfolio and add a professional edge to my design skills. Highly recommend for any creative!</p>
         </div>
 
-        <!-- reviews section -->
         <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
             <div class="flex gap-4 items-start">
                 <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/14.jpg" alt="user avatar" width="200" height="200" loading="lazy">
@@ -491,7 +528,8 @@
             </div>
             <p class="mt-8 dark:text-white transition-colors duration-300">These courses are a game-changer. The deep-dive modules and hands-on coding exercises make a massive difference in understanding complex system architecture and logic.</p>
         </div>
-
+    </div>
+    <div class="gap-8 space-y-8 md:columns-2 lg:columns-3" id="left">
         <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
             <div class="flex gap-4 items-start">
                 <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/2.jpg" alt="user avatar" width="200" height="200" loading="lazy">
