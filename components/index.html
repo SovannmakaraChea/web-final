@@ -15,17 +15,17 @@
     #right {
         animation: scrolling linear;
         animation-timeline: view();
-        animation-range: entry 0% cover 30%;
+        animation-range: entry 0% cover 35%;
     }
-    #reviews, #about, #left {
+    #about, #left {
         animation: scrolling2 linear;
         animation-timeline: view();
-        animation-range: entry 0% cover 30%;
+        animation-range: entry 0% cover 35%;
     }
     #course, #middle {
         animation: scrolling3 linear;
         animation-timeline: view();
-        animation-range: entry 0% cover 30%;
+        animation-range: entry 0% cover 35%;
     }
     #main, #about, #Contact {
         scroll-margin-top: 100px;
@@ -147,8 +147,9 @@
                         <a href="#" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Home</a>
                         <a href="#course" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Course</a>
                         <a href="#about" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">About Us</a>
-                        <a href="#Contact" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Contact</a>
                         <a href="#reviews" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Reviews</a>
+                        <a href="#Contact" class="block text-gray-700 hover:text-blue-600 dark:text-white font-medium py-2 transition-colors duration-200">Contact</a>
+                        
                         <button onclick="toggleDarkMode()"
                             class="sm:block flex h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer">
 
@@ -474,8 +475,8 @@
     
     <section class="pb-12 mx-auto md:pb-20 max-w-7xl mt-32" id="reviews">
     <div class="py-4 text-center md:py-8">
-        <h4 class="text-6xl font-extrabold tracking-wide text-center uppercase text-teal-600">Reviews</h4>
-        <p class="mt-2 tracking-tight text-black text:xl md:text-2xl dark:text-white transition-colors duration-300">We have some fans.</p>
+        <h4 class="text-6xl font-extrabold tracking-wide text-center uppercase text-teal-600" id="middle">Reviews</h4>
+        <p class="mt-2 tracking-tight text-black text:xl md:text-2xl dark:text-white transition-colors duration-300" id="middle">Look at what our lasted student said.</p>
     </div>
 
     <div class="gap-8 space-y-8 md:columns-2 lg:columns-3" id="right">
