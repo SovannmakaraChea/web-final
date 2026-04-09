@@ -570,9 +570,6 @@
   .rounded-3xl {
     border-radius: var(--radius-3xl);
   }
-  .rounded-\[1rem\] {
-    border-radius: 1rem;
-  }
   .rounded-\[2rem\] {
     border-radius: 2rem;
   }
@@ -748,6 +745,9 @@
   }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
+  }
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20);
   }
   .py-40 {
     padding-block: calc(var(--spacing) * 40);
@@ -1059,16 +1059,6 @@
     }
   }
   .hover\:bg-white {
-<<<<<<< HEAD
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-white);
-      }
-    }
-  }
-  .hover\:from-blue-700 {
-=======
->>>>>>> fd02e038540854e5676f60718fe55d6da65dfa39
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-white);
