@@ -69,6 +69,54 @@
       document.documentElement.classList.add('dark');
     }
   </script>
+   <script>
+    function toggleDarkMode() {
+      const html = document.documentElement;
+
+      html.classList.toggle('dark');
+
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    }
+  </script>
+  <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll effect for header
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                header.classList.add('shadow-xl');
+            } else {
+                header.classList.remove('shadow-xl');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Add some interactive animations
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-1px)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </head>
 <body class=" text-black dark:text-white dark:bg-gray-900 transition-colors duration-300">
     <!-- Nav bar section -->
@@ -178,7 +226,7 @@
     </header>
     
   <!-- Hero Section -->
-<div class="py-32 px-6 bg-gradient-to-b  via-purple-500 dark:bg-gray-900 transition-colors duration-300">
+<div class="py-32 px-6 bg-gradient-to-b via-purple-500 dark:bg-gray-900 transition-colors duration-300">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div class="md:w-1/2 mb-10 md:mb-0">
             <h2 class="text-4xl text-black font-extrabold font-stretch-50% leading-tight mb-4 dark:text-white transition-colors duration-300">Welcome to ISTAD Online Academy</h2>
@@ -581,7 +629,8 @@
             </div>
             <p class="mt-8 dark:text-white transition-colors duration-300">Absolutely love these tech courses. They are comprehensive, easy to follow, and integrated perfectly into my busy schedule. My portfolio looks brand new!</p>
         </div>
-    </div>    
+    </div>          
+</body>
 <footer id="Contact" class="mt-32">
   <div class="mx-auto max-w-7xl px-4 pt-16 pb-2 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-md">
@@ -721,55 +770,5 @@
       </p>
     </div>
   </div>
-</footer>        
-  <script>
-    function toggleDarkMode() {
-      const html = document.documentElement;
-
-      html.classList.toggle('dark');
-
-      if (html.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
-    }
-  </script>
-  <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Smooth scroll effect for header
-        let lastScroll = 0;
-        const header = document.querySelector('header');
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 100) {
-                header.classList.add('shadow-xl');
-            } else {
-                header.classList.remove('shadow-xl');
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Add some interactive animations
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-1px)';
-            });
-            
-            link.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-    </script>
-
-</body>
+</footer>
 </html>
