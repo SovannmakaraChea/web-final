@@ -82,7 +82,8 @@
       }
     }
   </script>
-  <script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -102,7 +103,6 @@
             } else {
                 header.classList.remove('shadow-xl');
             }
-            
             lastScroll = currentScroll;
         });
 
@@ -111,12 +111,12 @@
             link.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-1px)';
             });
-            
             link.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });
         });
-    </script>
+    });
+</script>
 </head>
 <body class=" text-black dark:text-white dark:bg-gray-900 transition-colors duration-300">
     <!-- Nav bar section -->
@@ -579,7 +579,7 @@
             <p class="mt-8 dark:text-white transition-colors duration-300">These courses are a game-changer. The deep-dive modules and hands-on coding exercises make a massive difference in understanding complex system architecture and logic.</p>
         </div>
     </div>
-    <div class="gap-8 space-y-8 md:columns-2 lg:columns-3" id="left">
+    <div class="gap-8 space-y-8 md:columns-2 lg:columns-3 mt-8" id="left">
         <div class="p-8 bg-white dark:bg-gray-900 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 transition-colors duration-300">
             <div class="flex gap-4 items-start">
                 <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/2.jpg" alt="user avatar" width="200" height="200" loading="lazy">
