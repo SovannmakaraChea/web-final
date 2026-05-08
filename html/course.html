@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISTAD – All Courses</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Quicksand', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .card-anim {
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards;
+    }
+
+    .course-card img {
+      transition: transform 0.6s ease;
+    }
+    .course-card:hover img {
+      transform: scale(1.1);
+    }
+  </style>
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 min-h-screen">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/90 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-700/50 shadow-sm transition-colors duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="text-xl font-extrabold tracking-wide text-blue-600 dark:text-blue-400 hover:opacity-80 transition">
+        ISTAD <span class="text-gray-800 dark:text-white">Academy</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">← Back to Home</a>
+        <button onclick="toggleDarkMode()" class="h-10 w-10 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition cursor-pointer">
+          <svg class="fill-violet-700 block dark:hidden w-full h-full" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+          </svg>
+          <svg class="fill-yellow-400 hidden dark:block w-full h-full" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="py-16 text-center bg-gradient-to-b from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+    <h1 class="text-5xl font-extrabold uppercase tracking-wide">All Courses</h1>
+    <p class="mt-3 text-lg text-gray-600 dark:text-gray-400">Choose from 20 expert-led courses and start learning today.</p>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="max-w-7xl mx-auto px-4 pb-4 flex flex-wrap gap-2 justify-center" id="filters">
+    <button onclick="filterCards('all')" class="filter-btn active-filter px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-600 hover:text-white transition">All</button>
+    <button onclick="filterCards('web')" class="filter-btn px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition">Web</button>
+    <button onclick="filterCards('programming')" class="filter-btn px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition">Programming</button>
+    <button onclick="filterCards('data')" class="filter-btn px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition">Data</button>
+    <button onclick="filterCards('design')" class="filter-btn px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition">Design</button>
+    <button onclick="filterCards('mobile')" class="filter-btn px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition">Mobile</button>
+  </div>
+
+  <!-- COURSES GRID -->
+  <main class="max-w-7xl mx-auto px-4 pb-24 pt-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="course-grid">
+
+
+      <!-- 1. HTML -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.05s" data-category="web">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="w-full h-[80%] object-contain p-8 bg-orange-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-orange-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-orange-200 mb-1">Web</span>
+          <h2 class="text-xl font-bold text-white mb-1">HTML</h2>
+          <p class="text-white/80 text-sm">Build the skeleton of the web with semantic, accessible markup.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.w3schools.com/html/default.asp" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-orange-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.8</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. CSS -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.10s" data-category="web">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="w-full h-[80%] object-contain p-8 bg-blue-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-blue-200 mb-1">Web</span>
+          <h2 class="text-xl font-bold text-white mb-1">CSS</h2>
+          <p class="text-white/80 text-sm">Style and animate websites with modern, responsive CSS techniques.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.w3schools.com/css/default.asp" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-blue-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.7</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. JavaScript -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.15s" data-category="web">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JS" class="w-full h-[80%] object-contain p-8 bg-yellow-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-yellow-600 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-yellow-200 mb-1">Web</span>
+          <h2 class="text-xl font-bold text-white mb-1">JavaScript</h2>
+          <p class="text-white/80 text-sm">Add interactivity and logic to your websites with JS.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.w3schools.com/js/default.asp" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-yellow-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.9</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. React -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.20s" data-category="web">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" class="w-full h-[80%] object-contain p-8 bg-cyan-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-cyan-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-cyan-200 mb-1">Web</span>
+          <h2 class="text-xl font-bold text-white mb-1">React</h2>
+          <p class="text-white/80 text-sm">Build powerful UIs with the world's most popular frontend library.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://react.dev/learn" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-cyan-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.9</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Python -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.25s" data-category="programming">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="w-full h-[80%] object-contain p-8 bg-indigo-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-indigo-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-indigo-200 mb-1">Programming</span>
+          <h2 class="text-xl font-bold text-white mb-1">Python</h2>
+          <p class="text-white/80 text-sm">From scripting to data science — Python does it all.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.w3schools.com/python/default.asp" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-indigo-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.9</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Java -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.30s" data-category="programming">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java" class="w-full h-[80%] object-contain p-8 bg-red-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-red-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-red-200 mb-1">Programming</span>
+          <h2 class="text-xl font-bold text-white mb-1">Java</h2>
+          <p class="text-white/80 text-sm">Build scalable, cross-platform apps with enterprise-grade Java.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.w3schools.com/java/default.asp" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-red-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.7</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. C++ -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.35s" data-category="programming">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++" class="w-full h-[80%] object-contain p-8 bg-blue-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-800 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-blue-200 mb-1">Programming</span>
+          <h2 class="text-xl font-bold text-white mb-1">C++</h2>
+          <p class="text-white/80 text-sm">Master low-level programming and data structures with C++.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.w3schools.com/cpp/default.asp" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-blue-700 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.6</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. C# -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.40s" data-category="programming">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg" alt="C#" class="w-full h-[80%] object-contain p-8 bg-purple-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-purple-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-purple-200 mb-1">Programming</span>
+          <h2 class="text-xl font-bold text-white mb-1">C#</h2>
+          <p class="text-white/80 text-sm">Build Windows apps and games with Microsoft's powerful C#.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.w3schools.com/cs/index.php" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-purple-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.7</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. TypeScript -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.45s" data-category="web">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript" class="w-full h-[80%] object-contain p-8 bg-blue-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-600 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-blue-200 mb-1">Web</span>
+          <h2 class="text-xl font-bold text-white mb-1">TypeScript</h2>
+          <p class="text-white/80 text-sm">Level up your JS with static typing and better tooling.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.typescriptlang.org/docs/" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-blue-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.8</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Node.js -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.50s" data-category="web">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js" class="w-full h-[80%] object-contain p-8 bg-green-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-green-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-green-200 mb-1">Web</span>
+          <h2 class="text-xl font-bold text-white mb-1">Node.js</h2>
+          <p class="text-white/80 text-sm">Build fast, scalable backend services with JavaScript on the server.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://nodejs.org/en/learn/getting-started/introduction-to-nodejs" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-green-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.8</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. PHP -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.55s" data-category="web">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP" class="w-full h-[80%] object-contain p-8 bg-violet-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-violet-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-violet-200 mb-1">Web</span>
+          <h2 class="text-xl font-bold text-white mb-1">PHP</h2>
+          <p class="text-white/80 text-sm">Power dynamic websites and web apps with server-side PHP scripting.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.w3schools.com/php/default.asp" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-violet-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. SQL -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.60s" data-category="data">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL" class="w-full h-[80%] object-contain p-8 bg-sky-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-sky-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-sky-200 mb-1">Data</span>
+          <h2 class="text-xl font-bold text-white mb-1">SQL</h2>
+          <p class="text-white/80 text-sm">Query, manage and analyse relational databases like a pro.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.w3schools.com/sql/default.asp" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-sky-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.7</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. Data Science -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.65s" data-category="data">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Data Science" class="w-full h-[80%] object-contain p-8 bg-teal-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-teal-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-teal-200 mb-1">Data</span>
+          <h2 class="text-xl font-bold text-white mb-1">Data Science</h2>
+          <p class="text-white/80 text-sm">Analyze and visualize data with Python, Pandas & Matplotlib.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.w3schools.com/datascience/default.asp" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-teal-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.8</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. Machine Learning -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.70s" data-category="data">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="ML" class="w-full h-[80%] object-contain p-8 bg-orange-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-orange-600 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-orange-200 mb-1">Data</span>
+          <h2 class="text-xl font-bold text-white mb-1">Machine Learning</h2>
+          <p class="text-white/80 text-sm">Build smart models with scikit-learn and real-world datasets.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://scikit-learn.org/stable/getting_started.html" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-orange-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.9</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. Flutter -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.75s" data-category="mobile">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png" alt="Flutter" class="w-full h-[80%] object-contain p-8 bg-blue-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-500 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-blue-200 mb-1">Mobile</span>
+          <h2 class="text-xl font-bold text-white mb-1">Flutter</h2>
+          <p class="text-white/80 text-sm">Create beautiful cross-platform mobile apps with Dart & Flutter.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://flutter.dev/learn" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-blue-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.8</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16. React Native -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.80s" data-category="mobile">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Native" class="w-full h-[80%] object-contain p-8 bg-gray-100 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-gray-300 mb-1">Mobile</span>
+          <h2 class="text-xl font-bold text-white mb-1">React Native</h2>
+          <p class="text-white/80 text-sm">Ship iOS & Android apps using your existing React knowledge.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://reactnative.dev/docs/getting-started" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-gray-700 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.7</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17. UI/UX Design -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.85s" data-category="design">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="UI/UX" class="w-full h-[80%] object-contain p-8 bg-pink-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-pink-700 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-pink-200 mb-1">Design</span>
+          <h2 class="text-xl font-bold text-white mb-1">UI/UX Design</h2>
+          <p class="text-white/80 text-sm">Design stunning interfaces with Figma and user-centered principles.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://www.figma.com/resource-library/" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-pink-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.9</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18. Tailwind CSS -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.90s" data-category="design">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind" class="w-full h-[80%] object-contain p-8 bg-cyan-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-cyan-800 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-cyan-200 mb-1">Design</span>
+          <h2 class="text-xl font-bold text-white mb-1">Tailwind CSS</h2>
+          <p class="text-white/80 text-sm">Rapidly build modern UIs without writing a single line of custom CSS.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://tailwindcss.com/docs" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-cyan-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.9</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19. Git & GitHub -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:0.95s" data-category="programming">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git" class="w-full h-[80%] object-contain p-8 bg-red-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-red-800 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-red-200 mb-1">Programming</span>
+          <h2 class="text-xl font-bold text-white mb-1">Git & GitHub</h2>
+          <p class="text-white/80 text-sm">Version control and collaborate on code with the industry standard tools.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://docs.github.com/en/get-started" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-red-600 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.8</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20. Docker -->
+      <div class="course-card card-anim relative bg-gray-200 dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-2xl h-[400px] cursor-pointer group" style="animation-delay:1.00s" data-category="programming">
+        <div class="absolute inset-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" class="w-full h-[80%] object-contain p-8 bg-blue-50 dark:bg-gray-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent top-1/3"></div>
+        </div>
+        <div class="relative z-10 flex flex-col justify-end h-full p-6">
+          <span class="text-xs font-bold uppercase text-blue-200 mb-1">Programming</span>
+          <h2 class="text-xl font-bold text-white mb-1">Docker</h2>
+          <p class="text-white/80 text-sm">Containerize and deploy your apps consistently across any environment.</p>
+          <div class="flex justify-between items-center mt-4">
+            <a href="https://docs.docker.com/get-started/" target="_blank" class="border border-white px-3 py-1.5 rounded-lg text-sm text-white hover:bg-white hover:text-blue-700 transition">Learn now</a>
+            <span class="text-white text-sm">⭐ 4.7</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- No results message -->
+    <p id="no-results" class="hidden text-center text-gray-500 dark:text-gray-400 mt-16 text-lg">No courses found for this category.</p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-200 dark:border-gray-700 py-6 text-center text-sm text-gray-500 dark:text-gray-400 transition-colors duration-300">
+    © 2026 ISTAD Online Academy. All rights reserved.
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.animationPlayState = 'running';
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card-anim').forEach(card => {
+      card.style.animationPlayState = 'paused';
+      observer.observe(card);
+    });
+
+    // Filter
+    function filterCards(cat) {
+      const cards = document.querySelectorAll('.course-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const match = cat === 'all' || card.dataset.category === cat;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      document.getElementById('no-results').classList.toggle('hidden', visible > 0);
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active-filter', 'bg-blue-600', 'text-white', 'border-blue-600');
+      });
+      event.target.classList.add('active-filter', 'bg-blue-600', 'text-white', 'border-blue-600');
+    }
+  </script>
+</body>
+</html>
